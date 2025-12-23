@@ -23,13 +23,14 @@ COPY requirements_versions.txt /app/
 COPY requirements.txt /app/
 
 # Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir -r requirements_versions.txt
 
 # Copy the application
 COPY . /app/
 
 # Set environment variables for Spaces
-ENV COMMANDLINE_ARGS="--listen --port 7860 --skip-torch-cuda-test --skip-install --skip-prepare-environment"
+# Note: COMMANDLINE_ARGS can be overridden; if not set, app.py uses sensible defaults
 ENV GRADIO_ANALYTICS_ENABLED="False"
 ENV GRADIO_SERVER_NAME="0.0.0.0"
 
