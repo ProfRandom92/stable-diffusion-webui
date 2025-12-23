@@ -23,8 +23,8 @@ COPY requirements_versions.txt /app/
 COPY requirements.txt /app/
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir -r requirements_versions.txt
+# Install requirements_versions.txt first (contains pinned versions), then requirements.txt for any missing packages
+RUN pip install --no-cache-dir -r requirements_versions.txt -r requirements.txt
 
 # Copy the application
 COPY . /app/
