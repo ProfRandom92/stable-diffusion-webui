@@ -1,3 +1,16 @@
+---
+title: Stable Diffusion WebUI
+emoji: 🎨
+colorFrom: purple
+colorTo: blue
+sdk: gradio
+sdk_version: 3.41.2
+app_file: app.py
+pinned: false
+license: agpl-3.0
+suggested_hardware: a10g-small
+---
+
 # Stable Diffusion web UI
 A web interface for Stable Diffusion, implemented using Gradio library.
 
@@ -103,6 +116,16 @@ Make sure the required [dependencies](https://github.com/AUTOMATIC1111/stable-di
 Alternatively, use online services (like Google Colab):
 
 - [List of Online Services](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Online-Services)
+
+### Hugging Face Spaces Deployment
+This repository is configured for deployment on Hugging Face Spaces:
+
+1. Fork this repository to your Hugging Face account
+2. Create a new Space and select "Import from GitHub"
+3. Choose GPU hardware (A10G Small recommended for optimal performance)
+4. The Space will automatically use `app.py` as the entry point
+
+**Note:** Stable Diffusion requires GPU hardware for reasonable performance. CPU-only Spaces will be very slow.
 
 ### Installation on Windows 10/11 with NVidia-GPUs using release package
 1. Download `sd.webui.zip` from [v1.0.0-pre](https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/tag/v1.0.0-pre) and extract its contents.
